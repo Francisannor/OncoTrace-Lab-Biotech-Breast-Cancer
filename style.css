@@ -265,6 +265,7 @@ body {
   color: #fff;
 }
 
+
 .nav-links {
   display: flex;
   gap: 20px;
@@ -329,5 +330,89 @@ body {
 
   .grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #222;
+  color: #fff;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Hamburger menu toggle */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ------------------ MEDIA QUERIES ------------------ */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: row; /* keep logo and toggle on same row */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #222;
+    flex-direction: column;
+    width: 100%;
+    display: none; /* hide by default */
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+
+  /* Hero adjustments */
+  .hero {
+    padding: 50px 20px;
+  }
+
+  /* Grid adjustments */
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .box {
+    padding: 40px 0;
+    font-size: 18px;
   }
 }
